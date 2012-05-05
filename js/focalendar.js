@@ -173,5 +173,15 @@ $(function(){
 
 	var App = new AppView;
 
+
+
+	$('.calendar').click(function() {
+		$(this).append('<textarea></textarea>').focus();
+	});
 });
+
+
+
+
+
 
