@@ -8,7 +8,7 @@ html, body { background:#eee; }
 h2 { font-size:2em; padding-left:.5em; }
 
 .grid { border-top:1px dotted #bbb; position:relative; }
-.grid h3 { font-size:5em; margin:1em .2em; opacity:.2; text-shadow:0 1px 0 #fff; }
+.grid h3 { font-size:10em; margin:.5em .1em; text-shadow:0 1px 0 #fff; color:rgba(0,0,0,.13); }
 #today, #tomorrow { height:40%; }
 #week, #week2 { height:40%; }
 #month, #month2 { height:40%; }
@@ -19,7 +19,7 @@ html, body, div.row-fluid, .row-fluid>div { height:100%; }
 
 .calendars { position:absolute; top:0; width:100%; }
 
-.calendar { background:#f8f8f8; color:#000; text-shadow:0 1px 0 #fff; border:0; padding:4em 1em 1em 1em; }
+.calendar { position:relative; background:#f8f8f8; color:#000; text-shadow:0 1px 0 #fff; border:0; padding:4em 1em 1em 1em; }
 .red { background:@red; text-shadow-color:0 1px 0 lighten(@red,10%); }
 .green { background:@green; text-shadow-color:0 1px 0 lighten(@green,10%); }
 .blue { background:@blue; text-shadow-color:0 1px 0 lighten(@blue,10%); }
@@ -27,4 +27,4 @@ html, body, div.row-fluid, .row-fluid>div { height:100%; }
 
 .vevent { background:rgba(255,255,255,.4); padding:1em; margin:0em -1em .5em; }
 .vevent .summary { color:#000; font-weight:bold; }
-#newevent { position:absolute; }
+.event { position:absolute; width:89%; height:1.5em; }
