@@ -184,5 +184,13 @@ $(function(){
 
 
 
+function sizeEvents() {
+		$(".vevent").each(function () { 
+			 var ISOduration = $(this).children(".duration").attr("title");
+			 var duration = ISOduration.substring(ISOduration.indexOf(1), ISOduration.indexOf('M'));
+			 var heightMapping = 0.3;
+			 $(this).height(duration*heightMapping);
+		});
+};
 
 
