@@ -1,15 +1,30 @@
-html { padding:1em; }
+html, body { background:#eee; }
 
-@red:#fbb;
-@green:#bfb;
-@blue:#bbf;
+@red:rgba(255,187,187,.3);
+@green:rgba(187,255,187,.3);
+@blue:rgba(187,187,255,.3);
+@orange:rgba(255,187,51,.3);
 
 h2 { font-size:2em; padding-left:.5em; }
 
-.calendar { background:#f8f8f8; color:#000; text-shadow:0 1px 0 #fff; border:1px solid #eee; border-radius:.3em; padding:1em; }
-.red { background:@red; text-shadow-color:0 1px 0 lighten(@red,10%); border-color:darken(@red,10%); }
-.green { background:@green; text-shadow-color:0 1px 0 lighten(@green,10%); border-color:darken(@green,10%); }
-.blue { background:@blue; text-shadow-color:0 1px 0 lighten(@blue,10%); border-color:darken(@blue,10%); }
+.grid { border-top:1px dotted #bbb; position:relative; }
+.grid h3 { font-size:5em; margin:1em .2em; opacity:.2; text-shadow:0 1px 0 #fff; }
+#today, #tomorrow { height:40%; }
+#week, #week2 { height:40%; }
+#month, #month2 { height:40%; }
+#year, #year2 { height:40%; }
+#decade, #decade2 { height:40%; }
 
-.vevent { }
+html, body, div.row-fluid, .row-fluid>div { height:100%; }
+
+.calendars { position:absolute; top:0; width:100%; }
+
+.calendar { background:#f8f8f8; color:#000; text-shadow:0 1px 0 #fff; border:0; padding:4em 1em 1em 1em; }
+.red { background:@red; text-shadow-color:0 1px 0 lighten(@red,10%); }
+.green { background:@green; text-shadow-color:0 1px 0 lighten(@green,10%); }
+.blue { background:@blue; text-shadow-color:0 1px 0 lighten(@blue,10%); }
+.orange { background:@orange; text-shadow-color:0 1px 0 lighten(@orange,10%); }
+
+.vevent { background:rgba(255,255,255,.4); padding:1em; margin:0em -1em .5em; }
+.vevent .summary { color:#000; font-weight:bold; }
 #newevent { position:absolute; }
