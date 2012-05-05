@@ -50,3 +50,14 @@
 <script src="js/backbone-0.9.2.js"></script>
 <script src="js/backbone-localstorage.js"></script>
 <script src="js/focalendar.js"></script>
+
+	
+	<!-- Templates -->
+
+  <script type="text/template" id="item-template">
+		<div class="vevent">
+		 <span class="summary"><%= title %></span>: 
+		 <abbr class="dtstart" title="<%= dtstart %>"><%= dtstart %></abbr>-
+		 <abbr class="dtend" title="<%= dtend %>"><%= dtend %></abbr>,
+		</div>
+  </script>
