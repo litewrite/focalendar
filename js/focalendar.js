@@ -175,8 +175,9 @@ $(function(){
 
 
 
-	$('.calendar').click(function() {
-		$(this).append('<textarea></textarea>').focus();
+	$('.calendar').click(function(e) {
+		$(this).append('<textarea id="newevent"></textarea>');
+		$('#newevent').css('left',e.pageX).css('top',e.pageY).focus();
 	});
 });
 
