@@ -7,7 +7,7 @@ $(function(){
           summary: "No event summary",
           dtstart: "No start date",
           dtend: "No end date",
-          order: Event.nextOrder(),
+          order: Events.nextOrder()
         };
       },
 
@@ -128,7 +128,7 @@ $(function(){
     el: $("#focalenderapp"),
 
     events: {
-      "keypress #new-event":  "createOnEnter",
+      "keypress #new-event":  "createOnEnter"
     },
 
     initialize: function() {
@@ -155,7 +155,7 @@ $(function(){
       var view = new EventView({model: event});
       this.$("#event-list").append(view.render().el);
     },
-
+		
     addAll: function() {
       Events.each(this.addOne);
     },
@@ -166,7 +166,7 @@ $(function(){
 
       Events.create({title: this.input.val()});
       this.input.val('');
-    },
+    }
 
 
   });
