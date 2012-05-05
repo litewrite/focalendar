@@ -44,7 +44,7 @@ $(function(){
 
 		model: Event,
 
-		localStorage: new Store("events-backbone"),
+		localStorage: new Store("events"),
 
 		nextOrder: function() {
 			if (!this.length) return 1;
