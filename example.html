@@ -93,15 +93,8 @@
 	
 		$(function(){
 
-			// document.getElementById("handle").addEventListener('touchstart', dragStart, false);
+			document.getElementById("handle").addEventListener('touchstart', dragStart, false);
 			document.getElementById("handle").addEventListener('mousedown', dragStart, false);
-
-			// document.getElementById("handle").addEventListener('touchmove', dragMove, false);
-			document.body.addEventListener('mousemove', dragMove);
-
-			document.body.addEventListener('mouserelease', dragRelease, false);
-
-
 			
 			var sample = $("<div class='handle'>TEST</div>");
 			$("#focalenderapp").append(sample);;
@@ -113,6 +106,11 @@
 			var startY;
 			
 			function dragStart(e){
+				document.getElementById("handle").addEventListener('touchmove', dragMove, false);
+				document.getElementById("handle").addEventListener('touchend', dragRelease, false);
+				document.body.addEventListener('mousemove', dragMove, false);
+				document.body.addEventListener('mouseup', dragRelease, false);
+				// TODO: Check window boundaries for mouseout event								
 				e.preventDefault();
 				startY = eventCoordinates(e).y;
 				height = parseInt(panel.css("height"));
@@ -123,11 +121,13 @@
 				var dY = eventCoordinates(e).y - startY;
 				panel.css("height", dY + height);
 				sample.text(dY + "");
-				console.log("GO GO GO");
 			}
 
 			function dragRelease(event){
-				
+				document.getElementById("handle").removeEventListener('touchmove', dragMove, false);
+				document.getElementById("handle").removeEventListener('touchend', dragRelease, false);				
+				document.body.removeEventListener('mousemove', dragMove, false);
+				document.body.removeEventListener('mouseup', dragRelease, false);				
 			}
 			
 			function eventCoordinates(event) {
@@ -135,12 +135,12 @@
 					x: 0,
 					y: 0
 				}
-				var t = event.type;
-				if(t === "mousedown" || t === "mousemove" || t === "mouseup") {
+				
+				if(event.clientX) {
 					coords.x = event.clientX;
 					coords.y = event.clientY;
 				}
-				else if(t === "touchstart" || t === "touchmove" || t === "touchend") {
+				else if(event.touches) {
 					coords.x = event.touches[0].pageX;
 					coords.y = event.touches[0].pageY;
 				}
