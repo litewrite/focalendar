@@ -24,12 +24,13 @@ html, body { height:100%; }
 .calendars { position:absolute; top:0; width:100%; }
 
 .calendar { position:relative; background:#f8f8f8; color:#000; text-shadow:0 1px 0 #fff; border:0; padding:4em 1em 1em 1em; }
+.row-fluid [class*="span"] { margin-left:0; }
 .red { background:@red; text-shadow-color:0 1px 0 lighten(@red,10%); }
 .green { background:@green; text-shadow-color:0 1px 0 lighten(@green,10%); }
 .blue { background:@blue; text-shadow-color:0 1px 0 lighten(@blue,10%); }
 .orange { background:@orange; text-shadow-color:0 1px 0 lighten(@orange,10%); }
 
-.vevent { background:rgba(255,255,255,.4); padding:1em; margin:0em -1em .5em; }
+.vevent { background:rgba(255,255,255,.4); padding:1em; margin:0 0 1em; }
 .vevent .summary { color:#000; font-weight:bold; }
 .event { position:absolute; width:89%; height:1.5em; }
 
