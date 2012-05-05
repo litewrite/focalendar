@@ -4,9 +4,9 @@ $(function(){
 
 		defaults: function() {
 			return {
-				summary: "No event summary",
-				dtstart: "No start date",
-				dtend: "No end date",
+				summary: null,
+				dtstart: new Date(),
+				dtend: new Date(),
 				order: Events.nextOrder()
 			};
 		},
