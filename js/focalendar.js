@@ -176,9 +176,11 @@ $(function(){
 
 
 	$('.calendar').click(function(e) {
-		$(this).append('<textarea id="newevent"></textarea>');
-		$('#newevent').css('left',e.pageX-10).css('top',e.pageY-10).focus();
+		$(this).append('<textarea class="event"></textarea>');
+		$('.event').css('top',e.pageY-10).css('left',$(this).left).focus();
 	});
+	
+	$('.calendar').css('height', document.height);
 });
 
 
