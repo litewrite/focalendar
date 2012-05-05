@@ -11,6 +11,12 @@
 	
 	
 	<style type="text/css" media="screen">
+	
+		body {
+			background: #dadada;
+			height: 1000px;
+		}
+	
 		.sample {
 			display: block;
 			position: absolute;
@@ -87,11 +93,13 @@
 	
 		$(function(){
 
-			document.getElementById("panel").addEventListener('touchstart', touchStart, false);
-			//document.body.addEventListener('click', touchHandler, false);
+			// document.getElementById("handle").addEventListener('touchstart', dragStart, false);
+			document.getElementById("handle").addEventListener('mousedown', dragStart, false);
 
-			document.getElementById("panel").addEventListener('touchmove', touchMove, false);
-			document.getElementById("panel").addEventListener('touchrelease', touchRelease, false);
+			// document.getElementById("handle").addEventListener('touchmove', dragMove, false);
+			document.body.addEventListener('mousemove', dragMove);
+
+			document.body.addEventListener('mouserelease', dragRelease, false);
 
 
 			
@@ -104,26 +112,42 @@
 			var startX;
 			var startY;
 			
-			function touchStart(e){
+			function dragStart(e){
 				e.preventDefault();
-				startY = e.touches[0].pageY;
+				startY = eventCoordinates(e).y;
 				height = parseInt(panel.css("height"));
-				
 			}
 
-			function touchMove(e){
+			function dragMove(e){
 				e.preventDefault();
-				sample.css("left", e.touches[0].pageX);
-				sample.css("top", e.touches[0].pageY);
-				dY = e.touches[0].pageY - startY;
-				
+				var dY = eventCoordinates(e).y - startY;
 				panel.css("height", dY + height);
-				sample.text(handle.position().left + " / " + handle.position().top);
+				sample.text(dY + "");
+				console.log("GO GO GO");
 			}
 
-			function touchRelease(event){
-
+			function dragRelease(event){
+				
 			}
+			
+			function eventCoordinates(event) {
+				var coords = {
+					x: 0,
+					y: 0
+				}
+				var t = event.type;
+				if(t === "mousedown" || t === "mousemove" || t === "mouseup") {
+					coords.x = event.clientX;
+					coords.y = event.clientY;
+				}
+				else if(t === "touchstart" || t === "touchmove" || t === "touchend") {
+					coords.x = event.touches[0].pageX;
+					coords.y = event.touches[0].pageY;
+				}
+				return coords;
+			}
+			
+			
 		})
 	
 	</script>
