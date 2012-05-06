@@ -380,11 +380,12 @@
           } else {
             document.getElementById('remotestorage-icon').className = '';
           }
-          document.getElementById('remotestorage-icon').onclick = function() { 
+          document.getElementById('remotestorage-icon').onclick = function() {
             localStorage.clear();
             onChangeHandler({key: null, oldValue: null, newValue: null});
             changeReadyState('connected', false);
-            document.getElementById('remotestorage-connect').className='';
+            document.getElementById('remotestorage-connect').className = '';
+            document.getElementById('remotestorage-get').style.display = 'inline';
           }
         } else {
           document.getElementById('remotestorage-icon').className = '';
