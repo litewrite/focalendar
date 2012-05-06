@@ -181,7 +181,7 @@ $(function(){
 	});
 	
 	$('.calendar').css('height', document.height);
-	$('.grid').each(function(index) {
+	$('#grid').children('.row-fluid').each(function(index) {
 		$(this).children('h3').html(moment($(this).attr('id')).format('D dddd'));
 		if((moment($(this).attr('id')).format('dddd') == 'Saturday') || (moment($(this).attr('id')).format('dddd') == 'Sunday')) {
 			$(this).addClass('weekend');
