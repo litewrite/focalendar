@@ -173,6 +173,10 @@ $(function(){
 
 	var App = new AppView;
 
+	// initialize remoteStorage.js
+	syncer.display('remotestorage-connect', ['events'], 'syncer/', function (e) {
+		syncer.getItem('events', 'key');
+	});
 
 
 	$('.calendar').click(function(e) {
