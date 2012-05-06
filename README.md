@@ -25,6 +25,12 @@ Inspired by [Marco Arment](http://www.marco.org/2010/03/28/more-ideas-than-time-
 
 
 
+## Unhosted
+
+**This app allows you to use your own data storage!** Its code is fully client-side without any server backend you need to trust! Find out more about the [Unhosted movement](http://unhosted.org). localStorage is used as fallback, so you can also use it offline.
+
+
+
 ## License
 
 TL;DR: **Do anything you want as long as you credit us.** (MIT)
