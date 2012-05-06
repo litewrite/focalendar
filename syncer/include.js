@@ -49,6 +49,16 @@
     //_unhosted$index:[category]
 
     function connect(userAddress, categories, pullInterval, dialogPath) {
+      if(!typeof(userAddress) == 'string') {
+        return false;
+      }
+      var parts = userAddress.split('@');
+      if(parts.length != 2) {
+        return false;
+      }
+      if(parts[1].split('.').length < 2) {
+        return false;
+      }
       ol('syncer.connect('
         +JSON.stringify(userAddress)+', '
         +JSON.stringify(categories)+', '
@@ -83,7 +93,7 @@
           }
         }
       }, false);
-      //TODO: deal with dialog failures
+      return true;
     }
     function parseObj(str) {
       var obj;
@@ -203,7 +213,7 @@
       }
     }
     function maybePull(now, cb) {
-      if(localStorage['_unhosted$pullInterval']) {
+      if(localStorage['_unhosted$bearerToken'] && localStorage['_unhosted$pullInterval']) {
         if(!localStorage['_unhosted$lastPullStartTime'] //never pulled yet
           || parseInt(localStorage['_unhosted$lastPullStartTime']) + localStorage['_unhosted$pullInterval']*1000 < now) {//time to pull
           localStorage['_unhosted$lastPullStartTime']=now;
@@ -213,9 +223,11 @@
             cb();
           });
         } else {
+          changeReadyState('syncing', false);
           cb();
         }
       } else {
+        changeReadyState('syncing', false);
         cb();
       }
     }
@@ -350,12 +362,15 @@
         libDir += '/'
       }
       document.getElementById(connectElement).innerHTML =
-        '<input id="remotestorage-useraddress" type="text" placeholder="you@remotestorage" autofocus />'
+        '<link href="'+libDir+'remoteStorage.css" rel="stylesheet"><div id="connect-div" style="display:none"><input id="remotestorage-useraddress" type="text" placeholder="you@remotestorage" autofocus />'
         +'<input id="remotestorage-status" type="submit" value="loading &hellip;" disabled />'
-        +'<img id="remotestorage-icon" class="remotestorage-loading" src="syncer/remoteStorage-icon.png" />'
+        +'<img id="remotestorage-icon" class="remotestorage-loading" src="'+libDir+'remoteStorage-icon.png" />'
         +'<span id="remotestorage-disconnect">Disconnect <strong></strong></span>'
         +'<a id="remotestorage-info" href="http://unhosted.org">?</a>'
-        +'<span id="remotestorage-infotext">This app allows you to use your own data storage!<br />Click for more info on the Unhosted movement.</span>';
+        +'<span id="remotestorage-infotext">This app allows you to use your own data storage!<br />Click for more info on the Unhosted movement.</span></div>'
+        +'<div id="register-div"><input type="submit" style="width:12em;height:3em;border-radius:1em;padding:1em" onclick="window.open(\'http://unhosted.org\');" value="Register">'
+        +'<input type="submit" style="width:12em;height:3em;border-radius:1em;padding:1em" onclick="document.getElementById(\'register-div\').style.display=\'none\';'
+        +'document.getElementById(\'connect-div\').style.display=\'inline\';" value="Connect"></div>';
 
       onReadyStateChange(function(obj) {
         if(obj.connected) {
@@ -383,7 +398,10 @@
             document.getElementById('remotestorage-useraddress').disabled = true;
             document.getElementById('remotestorage-status').disabled = true;
             document.getElementById('remotestorage-status').value = "connecting";
-            connect(document.getElementById('remotestorage-useraddress').value, categories, 10, libDir+'dialog.html');
+            if(!connect(document.getElementById('remotestorage-useraddress').value, categories, 10, libDir+'dialog.html')) {
+              document.getElementById('connect-div').style.display='none';
+              document.getElementById('register-div').style.display='inline';
+            }
           };
         }
       });

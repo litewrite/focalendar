@@ -175,7 +175,7 @@ $(function(){
 
 	// initialize remoteStorage.js
 	syncer.display('remotestorage-connect', ['events'], 'syncer/', function (e) {
-		syncer.getItem('events', 'key');
+		App.render();
 	});
 
 
