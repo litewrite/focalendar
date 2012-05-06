@@ -125,14 +125,17 @@ $(function(){
 
 	var AppView = Backbone.View.extend({
 
-		el: $("#focalenderapp"),
+		el: $('#calendars'),
 
 		events: {
-			"keypress #new-event":	"createOnEnter"
+			// TODO: Add onEnter.
+			//"keypress #new-event":	"createOnEnter",
+			"click .calendar":	"createEvent"
 		},
 
 		initialize: function() {
-			this.input = this.$("#new-event");
+			// Useless: Element is not available at startup.
+			//this.input = this.$("#new-event");
 
 			Events.bind('add', this.addOne, this);
 			Events.bind('reset', this.addAll, this);
@@ -153,7 +156,8 @@ $(function(){
 
 		addOne: function(event) {
 			var view = new EventView({model: event});
-			this.$("#event-list").append(view.render().el);
+			// This is the target at which all events get appended.
+			this.$("#calendar").append(view.render().el);
 		},
 		
 		addAll: function() {
@@ -166,6 +170,14 @@ $(function(){
 
 			Events.create({title: this.input.val()});
 			this.input.val('');
+		},
+
+		createEvent: function(e) {
+			// Get fresh reference. Lazy loading.
+			var input = this.$("#new-event");
+			if (!input.val()) return;
+			Events.create({title: input.val()});
+			input.remove();
 		}
 
 
@@ -180,13 +192,8 @@ $(function(){
 
 	// creating a new event
 	$('.calendar').click(function(e) {
-		$('.event').remove();
-		$(this).append('<textarea class="event"></textarea>');
-		$('.event').css('top',e.pageY-10).css('left',$(this).left).focus();
-		
-		$('.event').change(function() {
-			$(this).parent().append('<div class="vevent" style="top:'+$(this).css('top')+'"><span class="summary">'+$(this).val()+'</span></div>');
-		});
+		$(this).append('<textarea id="new-event"></textarea>');
+		$('#new-event').css('top',e.pageY-10).css('left',$(this).left).focus();
 	});
 
 	// adding the label for days
