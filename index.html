@@ -50,22 +50,22 @@
 
 	<div class="span4 calendar red" id="calendar">
 
-		<div class="vevent">
+		<div class="demovevent">
 			<a class="summary url" href="http://www.imdb.com/title/tt1517489/">Spy Kids 4D</a>: 
 			<abbr class="dtstart" title="2012-05-26-16-00">May 09, 16h</abbr>. <abbr class="duration" title="PT160M">(2hours)</abbr>. <span class="location"><a href="http://maps.google.de/maps/place?q=astra+filmpalast+Sterndamm+69+12487++Berlin+-+Treptow&hl=de&cid=10217250024112607220">Astra Filmpalast</a>.</span>
 		</div>
 
-		<div class="vevent">
+		<div class="demovevent">
 			<a class="summary url" href="http://www.imdb.com/title/tt1517489/">Dinner</a>: 
 			<abbr class="dtstart" title="2012-05-26-16-00">May 09, 16h</abbr>. <abbr class="duration" title="PT160M">(2hours)</abbr>. <span class="location"><a href="http://maps.google.de/maps/place?q=astra+filmpalast+Sterndamm+69+12487++Berlin+-+Treptow&hl=de&cid=10217250024112607220">Maredo</a>.</span>
 		</div>
 
-		<div class="vevent">
+		<div class="demovevent">
 			<a class="summary url" href="http://www.imdb.com/title/tt1517489/">Sleep</a>: 
 			<abbr class="dtstart" title="2012-05-26-16-00">May 09, 16h</abbr>. <abbr class="duration" title="PT480M">(8hours)</abbr>.
 		</div>
 
-		<div class="vevent" id="ux">
+		<div class="demovevent" id="ux">
 			<a class="summary url" href="http://www.uxcampeurope.org/">Ux Camp Europe 2012</a>: 
 			<abbr class="dtstart" title="2012-05-26-10-00">May 26 10h</abbr> until 
 			<abbr class="dtend" title="2012-05-18-00">May 27 18h</abbr>. <span class="location"><a href="http://maps.google.de/maps/place?q=Berlin,+Erwin-Schr%C3%B6dinger-Zentrum&hl=de&ie=UTF8&cid=559741620872275716">Berlin, Erwin-Schrödinger-Zentrum</a>.</span>
@@ -106,24 +106,6 @@
 <script src="js/focalendar.js"></script>
 
 
-
-
-<script>
-$(document).ready(
-	sizeEvents('.vevent', ( (window.innerHeight*0.4)/1440) )
-	);
-
-// factor: pixels per minute
-// window.innerHeight = amount of vertical space available
-// 24h => 1440min. 
-
-// example: availabe space => 600px. factor: 600 px / 1440 minutes = 0.41
-// available space currently 40% of innerHeight (#today is set to 40%), hence the 0.4.
-
-
-
-
-</script> 
 
 
 
