@@ -185,14 +185,18 @@ $(function(){
 
 
 
+// for each element (of class/id targets)
+	// get the ISO-duration from the duration attribute (sth like "PT120M", see http://en.wikipedia.org/wiki/ISO_8601#Durations and http://microformats.org/wiki/hcalendar#Format
+	// and set the height accordings to that duration, changed by a the dynFactor.
+	//
+	// todo: make factor dependent on an argument
 
-function sizeEvents() {
-		$(".vevent").each(function () { 
-			 var ISOduration = $(this).children(".duration").attr("title");
-			 var duration = ISOduration.substring(ISOduration.indexOf(1), ISOduration.indexOf('M'));
-			 var heightMapping = 0.3;
-			 $(this).height(duration*heightMapping);
-		});
-};
-
-
+function sizeEvents(targets, dynFactor) {
+		$(targets).each(
+			function () { 
+				var ISOduration = $(this).children(".duration").attr("title");
+				var duration = ISOduration.substring(ISOduration.indexOf(1), ISOduration.indexOf('M'));
+				$(this).height( duration * dynFactor );
+				}
+		);
+}
