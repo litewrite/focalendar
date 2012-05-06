@@ -184,9 +184,6 @@ $(function(){
 		$('.event').css('top',e.pageY-10).css('left',$(this).left).focus();
 	});
 
-	// sizing calendars to document height, this is a dirty fix
-	if(document.height>$(document).height()?$('.calendar').css('height',document.height):$('.calendar').css('height',$(document).height));
-
 	// adding the label for days
 	$('#grid').children('.row-fluid').each(function(index) {
 		$(this).children('h3').html(moment($(this).attr('id')).format('D dddd'));
