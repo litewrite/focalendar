@@ -214,7 +214,7 @@ $(function(){
 			$(targets).each(
 				function () { 
 					var ISOduration = $(this).children(".duration").attr("title");
-					var duration = ISOduration.substring(ISOduration.indexOf(1), ISOduration.indexOf('M'));
+					var duration = ISOduration.substring(ISOduration.indexOf('T')+1, ISOduration.indexOf('M'));
 					$(this).height( duration * dynFactor );
 					}
 			);
