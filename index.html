@@ -51,55 +51,57 @@
 
 	<div class="span4 calendar red" id="calendar">
 
-		<div class="demovevent" id="event1">
-			<span>event 1</span>. <abbr class="duration" title="PT160M"></abbr>
+																
+								<div class="demovevent" id="event1">
+									<span>event 1</span>.
+									<abbr class="duration" title="PT160M"></abbr>
+								</div>
+
+								<div class="demovevent" id="event2">
+									<span>event 2</span>.
+									<abbr class="duration" title="PT1920M"></abbr>
+								</div>
+
+								<!-- 
+
+								<div class="demovevent">
+									<a class="summary url" href="http://www.imdb.com/title/tt1517489/">Spy Kids 4D</a>: 
+									<abbr class="dtstart" title="2012-05-26-16-00">May 09, 16h</abbr>.
+									<abbr class="duration" title="PT160M">(2hours)</abbr>.
+									<span class="location"><a href="http://maps.google.de/maps/place?q=astra+filmpalast+Sterndamm+69+12487++Berlin+-+Treptow&hl=de&cid=10217250024112607220">Astra Filmpalast</a>.</span>
+								</div>
+
+								<div class="demovevent">
+									<a class="summary url" href="http://www.imdb.com/title/tt1517489/">Dinner</a>: 
+									<abbr class="dtstart" title="2012-05-26-16-00">May 09, 16h</abbr>.
+									<abbr class="duration" title="PT160M">(2hours)</abbr>.
+									<span class="location"><a href="http://maps.google.de/maps/place?q=astra+filmpalast+Sterndamm+69+12487++Berlin+-+Treptow&hl=de&cid=10217250024112607220">Maredo</a>.</span>
+								</div>
+
+
+								<div class="demovevent" id="ux">
+									<a class="summary url" href="http://www.uxcampeurope.org/">Ux Camp Europe 2012</a>: 
+									<abbr class="dtstart" title="2012-05-26-10-00">May 26 10h</abbr> until 
+									<abbr class="dtend" title="2012-05-18-00">May 27 18h</abbr>. <span class="location"><a href="http://maps.google.de/maps/place?q=Berlin,+Erwin-Schr%C3%B6dinger-Zentrum&hl=de&ie=UTF8&cid=559741620872275716">Berlin, Erwin-Schrödinger-Zentrum</a>.</span>
+									<abbr class="duration" title="PT1920M"></abbr>
+								</div>
+
+								-->
 		</div>
-		<div class="demovevent" id="event2">
-			<span>event 2</span>. <abbr class="duration" title="PT1920M"></abbr>
-		</div>
 
-		
+<div class="span3 calendar green">
+</div>
 
-		<div class="demovevent">
-			<a class="summary url" href="http://www.imdb.com/title/tt1517489/">Spy Kids 4D</a>: 
-			<abbr class="dtstart" title="2012-05-26-16-00">May 09, 16h</abbr>. <abbr class="duration" title="PT160M">(2hours)</abbr>. <span class="location"><a href="http://maps.google.de/maps/place?q=astra+filmpalast+Sterndamm+69+12487++Berlin+-+Treptow&hl=de&cid=10217250024112607220">Astra Filmpalast</a>.</span>
-		</div>
+<div class="span3 calendar blue">
+</div>
 
-		<div class="demovevent">
-			<a class="summary url" href="http://www.imdb.com/title/tt1517489/">Dinner</a>: 
-			<abbr class="dtstart" title="2012-05-26-16-00">May 09, 16h</abbr>. <abbr class="duration" title="PT160M">(2hours)</abbr>. <span class="location"><a href="http://maps.google.de/maps/place?q=astra+filmpalast+Sterndamm+69+12487++Berlin+-+Treptow&hl=de&cid=10217250024112607220">Maredo</a>.</span>
-		</div>
+<div class="span2 calendar orange">
+</div>
 
 
-		<div class="demovevent" id="ux">
-			<a class="summary url" href="http://www.uxcampeurope.org/">Ux Camp Europe 2012</a>: 
-			<abbr class="dtstart" title="2012-05-26-10-00">May 26 10h</abbr> until 
-			<abbr class="dtend" title="2012-05-18-00">May 27 18h</abbr>. <span class="location"><a href="http://maps.google.de/maps/place?q=Berlin,+Erwin-Schr%C3%B6dinger-Zentrum&hl=de&ie=UTF8&cid=559741620872275716">Berlin, Erwin-Schrödinger-Zentrum</a>.</span>
-			<abbr class="duration" title="PT1920M"></abbr>
-
-
-		</div>
-
-
-
-	</div>
-
-
-	<div class="span3 calendar green">
-
-	</div>
-
-
-	<div class="span3 calendar blue">
-
-	</div>
-
-
-	<div class="span2 calendar orange">
-
-	</div>
 
 </div>
+
 
 
 <script src="js/jquery-1.7.2.min.js"></script>
@@ -118,10 +120,10 @@
 	<!-- Templates -->
 
   <script type="text/template" id="item-template">
-		<div class="vevent">
-		 <span class="summary"><%= title %></span>: 
-		 <abbr class="dtstart" title="<%= dtstart %>"><%= dtstart %></abbr>-
-		 <abbr class="dtend" title="<%= dtend %>"><%= dtend %></abbr>,
+		<div class="vevent2">
+		 <span class="summary"><%= title %></span>:
+		 <!-- <abbr class="dtstart" title="<%= dtstart %>"><%= dtstart %></abbr>
+		 <abbr class="dtend" title="<%= dtend %>"><%= dtend %></abbr> -->
 		</div>
   </script>
 
