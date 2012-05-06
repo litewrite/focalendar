@@ -196,22 +196,34 @@ $(function(){
 			$(this).addClass('weekend');
 		}
 	});
-});
 
 
-
-// for each element (of class/id targets)
+	// for each element (of class/id targets)
 	// get the ISO-duration from the duration attribute (sth like "PT120M", see http://en.wikipedia.org/wiki/ISO_8601#Durations and http://microformats.org/wiki/hcalendar#Format
 	// and set the height accordings to that duration, changed by a the dynFactor.
 	//
 	// todo: make factor dependent on an argument
 
-function sizeEvents(targets, dynFactor) {
-		$(targets).each(
-			function () { 
-				var ISOduration = $(this).children(".duration").attr("title");
-				var duration = ISOduration.substring(ISOduration.indexOf(1), ISOduration.indexOf('M'));
-				$(this).height( duration * dynFactor );
-				}
-		);
-}
+	function sizeEvents(targets, dynFactor) {
+			$(targets).each(
+				function () { 
+					var ISOduration = $(this).children(".duration").attr("title");
+					var duration = ISOduration.substring(ISOduration.indexOf(1), ISOduration.indexOf('M'));
+					$(this).height( duration * dynFactor );
+					}
+			);
+	}
+
+	// factor: pixels per minute
+	// window.innerHeight = amount of vertical space available
+	// 24h => 1440min. 
+
+	// example: availabe space => 600px. factor: 600 px / 1440 minutes = 0.41
+	// available space currently 40% of innerHeight (#today is set to 40%), hence the 0.4.
+
+	sizeEvents('.demovevent', ( (window.innerHeight*0.4)/1440) )
+
+});
+
+
+
