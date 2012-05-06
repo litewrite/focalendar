@@ -180,8 +180,13 @@ $(function(){
 
 	// creating a new event
 	$('.calendar').click(function(e) {
+		$('.event').remove();
 		$(this).append('<textarea class="event"></textarea>');
 		$('.event').css('top',e.pageY-10).css('left',$(this).left).focus();
+		
+		$('.event').change(function() {
+			$(this).parent().append('<div class="vevent" style="top:'+$(this).css('top')+'"><span class="summary">'+$(this).val()+'</span></div>');
+		});
 	});
 
 	// adding the label for days
