@@ -31,15 +31,6 @@ $(function(){
 
 
 
-
-
-
-
-
-
-
-
-
 	var EventList = Backbone.Collection.extend({
 
 		model: Event,
@@ -58,12 +49,6 @@ $(function(){
 	});
 
 	var Events = new EventList;
-
-
-
-
-
-
 
 
 
@@ -113,14 +98,6 @@ $(function(){
 		}
 
 	});
-
-
-
-
-
-
-
-
 
 
 
@@ -193,7 +170,7 @@ $(function(){
 
 	// creating a new event
 	$('.calendar').click(function(e) {
-		$(this).append('<textarea id="new-event"></textarea>');
+		$(this).append('<input id="new-event" placeholder="New event …" />');
 		$('#new-event').css('top',e.pageY-10).css('left',$(this).left).focus();
 	});
 
@@ -227,7 +204,7 @@ $(function(){
 	// example: availabe space => 600px. factor: 600 px / 1440 minutes = 0.41
 	// available space currently 40% of innerHeight (#today is set to 40%), hence the 0.4.
 
-	sizeEvents('.demovevent', ( (window.innerHeight*0.4)/1440) )
+	sizeEvents('.vevent', ( (window.innerHeight*0.4)/1440) )
 
 });
 

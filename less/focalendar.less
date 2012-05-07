@@ -1,8 +1,5 @@
-
-
-
-
-html, body { background:#eee; }
+html, body { background:#eee; height:100%; }
+li { list-style:none; }
 
 @red:rgba(255,187,187,.3);
 @green:rgba(187,255,187,.3);
@@ -25,8 +22,6 @@ h2 { font-size:2em; padding-left:.5em; }
 .decade {  }
 .decade2 {  }
 
-html, body { height:100%; }
-
 .calendars { position:absolute; top:0; width:100%; }
 
 .calendar { position:relative; background:#f8f8f8; color:#000; text-shadow:0 1px 0 #fff; border:0; padding:4em 1em 1em 1em; height:100em; }
@@ -36,20 +31,10 @@ html, body { height:100%; }
 .blue { background:@blue; text-shadow-color:0 1px 0 lighten(@blue,10%); }
 .orange { background:@orange; text-shadow-color:0 1px 0 lighten(@orange,10%); }
 
-.vevent { position:absolute; width:83%; background:rgba(255,255,255,.34); padding:0 1em 0 1em; margin:0 0 2px 0 ; box-sizing: border-box; border-left: 1px solid black;} /* paddimng was 1em, margin was 0 0 1em */
-.vevent2 { width:83%; background:rgba(255,255,255,.34); padding:0 1em 0 1em; margin:0 0 2px 0 ; box-sizing: border-box; border-left: 1px solid black; }
-.vevent .summary { color:#000; font-weight:bold; box-sizing: border-box;}
+.vevent { min-height:1.5em; background:rgba(255,255,255,.34); padding:0 1em 0 1em; margin:0 0 .5em 0 ; box-sizing:border-box; border-left:1px solid black; border-radius:0 .3em .3em 0; }
+.vevent .summary { color:#000; font-weight:bold; box-sizing:border-box; }
 #new-event { position:absolute; width:89%; height:1.5em; background:rgba(255,255,255,.1); }
-
-.demovevent { width:83%; background:rgba(255,255,255,.34); padding:0 1em 0 1em; margin:0 0 2px 0 ; box-sizing: border-box; border-left: 1px solid black;} /* paddimng was 1em, margin was 0 0 1em */
 
 .weekend { background:rgba(255,255,255,.7); }
 
 
-
-
-/* quick fixes */
-
-li { 
-	list-style-position: inside;
-	list-style-type: none; }
