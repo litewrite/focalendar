@@ -371,43 +371,45 @@
         +'<span id="remotestorage-infotext">This app allows you to use your own data storage!<br />Click for more info on the Unhosted movement.</span>'
         +'<a id="remotestorage-get" class="remotestorage-button" href="http://unhosted.org" target="_blank">get remoteStorage</a>';
 
+      document.getElementById('remotestorage-useraddress').onkeyup = function(e) { // connect on enter
+        if(e.keyCode==13) document.getElementById('remotestorage-status').click();
+      }
+
       onReadyStateChange(function(obj) {
-        if(obj.connected) {
+        if(obj.connected) { // connected state
           document.getElementById('remotestorage-connect').className = 'remotestorage-connected';
           document.getElementById('remotestorage-disconnect').getElementsByTagName('strong')[0].innerHTML = getUserAddress();
-          if(obj.syncing) {
+          if(obj.syncing) { // spin logo while syncing
           	document.getElementById('remotestorage-icon').className = 'remotestorage-loading';
-          } else {
+          } else { // do not spin when not syncing
             document.getElementById('remotestorage-icon').className = '';
           }
-          document.getElementById('remotestorage-icon').onclick = function() {
+          document.getElementById('remotestorage-icon').onclick = function() { // when connected, disconnect on logo click
             localStorage.clear();
             onChangeHandler({key: null, oldValue: null, newValue: null});
             changeReadyState('connected', false);
             document.getElementById('remotestorage-connect').className = '';
             document.getElementById('remotestorage-get').style.display = 'inline';
           }
-        } else {
+        } else { // disconnected, initial state
           document.getElementById('remotestorage-icon').className = '';
           document.getElementById('remotestorage-useraddress').disabled = true;
           document.getElementById('remotestorage-useraddress').style.display = 'none';
           document.getElementById('remotestorage-status').disabled = false;
           document.getElementById('remotestorage-status').value = 'connect';
-          
+
           document.getElementById('remotestorage-status').onclick = function() {
-            if(document.getElementById('remotestorage-useraddress').style.display == 'none') {
+            if(document.getElementById('remotestorage-useraddress').disabled == true) { // first click on connect reveals the input
               document.getElementById('remotestorage-get').style.display = 'none';
               document.getElementById('remotestorage-useraddress').style.display = 'inline';
               document.getElementById('remotestorage-useraddress').disabled = false;
               document.getElementById('remotestorage-useraddress').focus();
-            } else {
+            } else { // second click on connect starts the connection
               document.getElementById('remotestorage-icon').className = 'remotestorage-loading';
-              document.getElementById('remotestorage-useraddress').style.display = 'none';
               document.getElementById('remotestorage-useraddress').disabled = true;
               document.getElementById('remotestorage-status').disabled = true;
               document.getElementById('remotestorage-status').value = 'connecting';
-            }
-            if(!connect(document.getElementById('remotestorage-useraddress').value, categories, 10, libDir+'dialog.html')) {
+              connect(document.getElementById('remotestorage-useraddress').value, categories, 10, libDir+'dialog.html');
             }
           };
         }
