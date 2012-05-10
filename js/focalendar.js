@@ -188,13 +188,13 @@ $(function(){
 	// and set the height accordings to that duration, changed by a the dynFactor.
 
 	function sizeEvents(targets, dynFactor) {
-			$(targets).each(
-				function () { 
-					var ISOduration = $(this).children(".duration").attr("title");
-					var duration = ISOduration.substring(ISOduration.indexOf('T')+1, ISOduration.indexOf('M'));
-					$(this).height( duration * dynFactor );
-					}
-			);
+		$(targets).each(function() {
+            if($(this).children('.duration')) {
+                var ISOduration = $(this).children('.duration').attr('title');
+                var duration = ISOduration.substring(ISOduration.indexOf('T')+1, ISOduration.indexOf('M'));
+                $(this).height( duration * dynFactor );
+            }
+		});
 	}
 
 	// factor: pixels per minute

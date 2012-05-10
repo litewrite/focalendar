@@ -19,7 +19,7 @@ Inspired by [Marco Arment](http://www.marco.org/2010/03/28/more-ideas-than-time-
 * [Bootstrap](http://twitter.github.com/bootstrap)
 * [Backbone.js](http://documentcloud.github.com/backbone/)
 * [remoteStorage.js](http://remotestoragejs.com)
-* [Date.js](http://datejs.com)
+* [Date.js](http://github.com/eric/Datejs)
 * [Moment.js](http://momentjs.com)
 * [hCalendar](http://microformats.org/wiki/hcalendar)
 
@@ -35,7 +35,7 @@ Inspired by [Marco Arment](http://www.marco.org/2010/03/28/more-ideas-than-time-
 
 TL;DR: **Do anything you want as long as you credit us.** (MIT)
 
-Copyright (c) 2012 [Jan-Christoph Borchardt](http://jancborchardt.net), [Simon Jockers](http://simonjockers.com), [Fabian](http://filtercake.com) & [Tobias](http://weblog.avp-ptr.de)
+Copyright (c) 2012 [Jan-Christoph Borchardt](http://jancborchardt.net), [Simon Jockers](http://simonjockers.com), [Fabian](http://filtercake.com) & [Tobias Preuss](http://weblog.avp-ptr.de)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
