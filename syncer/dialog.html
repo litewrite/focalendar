@@ -14,7 +14,7 @@
         window.close();
       } else {
         var userAddress = localStorage.getItem('_unhosted$userAddress');
-        document.write('Redirecting to your remote storage for "'+userAddress+'" &hellip;');
+        document.write('Redirecting to your remote storage for <strong>'+userAddress+'</strong> &hellip;');
         var categories = JSON.parse(localStorage.getItem('_unhosted$categories'));
         remoteStorage.getStorageInfo(userAddress, function(err, storageInfo) {
           if(err) {
