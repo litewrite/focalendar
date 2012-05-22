@@ -2,7 +2,8 @@
 
 Busting 31 boxes – a proper calendar which lets you focus your plans.
 
-Inspired by [Marco Arment](http://www.marco.org/2010/03/28/more-ideas-than-time-logarithmic-calendar-view) and more alternative calendar concepts.
+Inspired by [Marco Arment](http://www.marco.org/2010/03/28/more-ideas-than-time-logarithmic-calendar-view), [Continuous Calendar](http://madebyevan.com/calendar), [Four Times Daily](http://fourtimesdaily.com)
+Future inspiration: [SlideScreen](http://slidescreenhome.com), [Flipboard](http://flipboard.com), [DeepaMehta](http://deepamehta.de/en)
 
 
 
