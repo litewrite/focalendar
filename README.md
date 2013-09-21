@@ -32,6 +32,12 @@ Future inspiration: [SlideScreen](http://slidescreenhome.com), [Flipboard](http:
 
 
 
+## Contribute
+
+* checkout the .editorconfig file
+
+
+
 ## License
 
 TL;DR: **Do anything you want as long as you credit us.** (MIT)

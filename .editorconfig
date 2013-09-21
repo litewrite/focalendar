@@ -1,4 +1,10 @@
-; see http://editorconfig.org/ for more info
+; if you don't care what this editorconfig this is
+; just take a look at the lines below
+; and stick with this style conventions.
+; otherwise checkout http://editorconfig.org/
+; install the extension for your editor
+; and never care about spaces vs tabs anymore!
+
 
 
 ; top-most EditorConfig file
