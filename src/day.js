@@ -14,9 +14,7 @@
       .find('.events')
       .append(event);
 
-    event.find('.event-content').addClass('hide');
-
-    event.find('.event-edit').addClass('show').focus();
+    event.find('.event-content').focus();
   });
 
 

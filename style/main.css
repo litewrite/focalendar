@@ -38,12 +38,21 @@ body, html {
 
 .day {
   list-style: none;
-  padding: 15px;
+  padding: 7px 15px 7px 15px;
+  min-height: 33px;
 }
 
 .day:nth-child(even) {
   background: #FAFAFA;
 }
+
+.day-label {
+  color: #535353;
+  font-weight: 500;
+  float: left;
+  padding: 7px 0;
+}
+
 
 #today {
   border-top: 1px solid #424242;
@@ -58,12 +67,6 @@ body, html {
   opacity: 0.7;
 }
 
-
-.day-label {
-  color: #535353;
-  font-weight: 500;
-  float: left;
-}
 
 
 .events {
@@ -82,21 +85,12 @@ body, html {
   max-width: 30%;
 }
 
-
 .event-content {
-
-}
-
-.event-content.hide {
-  display: none;
-}
-
-.event-edit {
-  display: none;
-  max-width: calc(100% - 10px);
-  max-height: 100px;
-}
-
-.event-edit.show {
-  display: inline;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: #000;
+  margin: 0
 }
