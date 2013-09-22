@@ -29,7 +29,7 @@
     addEvents(month, date);
 
     return month;
-  }
+  };
 
 
 

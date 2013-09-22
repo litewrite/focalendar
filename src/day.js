@@ -6,22 +6,6 @@
   baseDay.remove();
 
 
-  app.container.on('click', '.day-label', function(e) {
-    e.stopPropagation();
-  });
-
-  // TODO: also listen to touchdown
-  app.container.on('click', '.day', function(e) {
-    var event = app.event();
-
-    $(e.currentTarget)
-      .find('.events')
-      .append(event);
-
-    event.find('.event-content').focus();
-  });
-
-
   // returns a day DOM element
   app.day = function(date) {
     var day = baseDay.clone();
@@ -45,6 +29,25 @@
     var event = app.event(data);
     day.find('.events').append(event);
   };
+
+
+
+  app.container.on('click', '.day-label', function(e) {
+    e.stopPropagation();
+  });
+
+
+
+  // TODO: also listen to touchdown
+  app.container.on('click', '.day', function(e) {
+    var event = app.event();
+
+    $(e.currentTarget)
+      .find('.events')
+      .append(event);
+
+    event.find('.event-content').focus();
+  });
 
 
 

@@ -12,7 +12,7 @@
 
     $(window).scroll(app.infiniteScroll);
 
-  }
+  };
 
 
 
