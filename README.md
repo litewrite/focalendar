@@ -35,6 +35,7 @@ Future inspiration: [SlideScreen](http://slidescreenhome.com), [Flipboard](http:
 ## Contribute
 
 * checkout the .editorconfig file
+* Open index.html with your webserver of choice
 
 
 
