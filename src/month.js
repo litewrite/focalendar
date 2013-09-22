@@ -1,29 +1,28 @@
-(function($) {
+(function(app) {
 
 
 
-  // has to be removed after baseDay
-  var baseMonth = $.byClass('month');
+  var baseMonth = $('.month');
   baseMonth.remove();
 
 
   // returns a month DOM element for the month of the given date
-  $.month = function(date) {
+  app.month = function(date) {
 
-    var month = baseMonth.cloneNode(true);
-    var header = $.byClass('month-header', month);
-    var days = $.byClass('days', month);
+    var month = baseMonth.clone();
+    var header = month.find('.month-header');
+    var days = month.find('.days');
     var monthNumber = date.getMonth();
 
     // TODO: year for January is wrong when scrolling down
-    header.innerHTML = nameOfMonth(date) + ' ' + date.getUTCFullYear();
+    header.text( nameOfMonth(date) + ' ' + date.getUTCFullYear() );
 
     // start at first of month
     date.setDate(1);
 
     while (date.getMonth() === monthNumber) {
-      var day = $.day(date);
-      days.appendChild(day);
+      var day = app.day(date);
+      days.append(day);
       date.setDate( date.getDate() + 1 );
     }
 

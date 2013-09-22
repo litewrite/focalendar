@@ -2,7 +2,16 @@ body, html {
   width: 100%;
   padding: 0;
   margin: 0;
+  color: #363636;
 }
+
+
+
+.clear {
+  clear: both;
+}
+
+
 
 .month-header {
   padding: 15px;
@@ -18,10 +27,14 @@ body, html {
   position: -o-sticky;
 }
 
-.days {
+
+
+.days, .events {
   padding: 0;
   margin: 0;
 }
+
+
 
 .day {
   list-style: none;
@@ -45,7 +58,40 @@ body, html {
   opacity: 0.7;
 }
 
+
 .day-label {
   color: #535353;
   font-weight: 500;
+  float: left;
+}
+
+
+.events {
+  float: left;
+  padding: 0 10px;
+  width: 80%;
+}
+
+.event {
+  list-style: none;
+  float: left;
+  margin: 3px;
+  padding: 2px 4px;
+  border: 1px dashed #747474;
+  border-radius: 2px;
+  max-width: 30%;
+}
+
+
+.event-content {
+}
+
+.event-edit {
+  display: none;
+  max-width: calc(100% - 10px);
+  max-height: 100px;
+}
+
+.event-edit.show {
+  display: inline;
 }

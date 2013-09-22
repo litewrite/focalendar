@@ -1,24 +1,23 @@
-(function($) {
+(function(app) {
 
 
 
-  // baseDay has to be removed before removing baseMonth
-  var baseDay = $.byClass('day');
+  var baseDay = $('.day');
   baseDay.remove();
 
 
   // returns a day DOM element
-  $.day = function(date) {
-    var day = baseDay.cloneNode(true);
-    var label = $.byClass('day-label', day);
+  app.day = function(date) {
+    var day = baseDay.clone();
+    var label = day.find('.day-label');
 
-    label.innerHTML = dayOfWeek(date) + ' ' + date.getDate();
-    day.setAttribute('data-date', date.toDateString());
+    label.text(dayOfWeek(date) + ' ' + date.getDate());
+    day.attr('data-date', date.toDateString());
 
     if (isToday(date)) {
-      day.id = 'today';
+      day.attr('id', 'today');
     } else if (isPast(date)) {
-      day.classList.add('past');
+      day.addClass('past');
     }
 
     return day;

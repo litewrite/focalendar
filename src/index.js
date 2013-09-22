@@ -5,17 +5,24 @@
   // main entry point for the application
   function main() {
 
-    $.container = $.byClass('container');
+    app.container = $('#container');
 
     addCurrentMonth();
 
-    window.onscroll = $.infiniteScroll;
+    $(window).scroll(app.infiniteScroll);
+
+    app.container.on('click', '.day', function(e) {
+      var day = $(e.target);
+      var events = day.find('.event');
+
+      events.append(app.event());
+    });
 
   }
 
 
 
-  var $ = window.focalendar = main;
+  var app = window.focalendar = main;
 
 
 
@@ -23,8 +30,8 @@
 
   function addCurrentMonth() {
     var date = new Date();
-    var month = $.month(date);
-    $.container.appendChild(month);
+    var month = app.month(date);
+    app.container.append(month);
   }
 
 

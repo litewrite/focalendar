@@ -17,25 +17,32 @@
 
 <body>
 
-  <div class="container">
+  <div id="container">
 
     <article class="month">
       <h2 class="month-header"></h2>
-      <ul class="days">
-        <li class="day">
-          <span class="day-label"></span>
-          <ul class="events"></ul>
-        </li>
-      </ul>
+      <ul class="days"></ul>
     </article>
+
+    <li class="day">
+      <span class="day-label"></span>
+      <ul class="events"></ul>
+      <div class="clear"></div>
+    </li>
+
+    <li class="event">
+      <span class="event-content"></span>
+      <textarea class="event-edit"></textarea>
+    </li>
 
   </div>
 
 
+  <script src="vendor/jquery.js"></script>
   <script src="src/index.js"></script>
-	<script src="src/utils.js"></script>
-  <script src="src/day.js"></script>
+	<script src="src/day.js"></script>
   <script src="src/month.js"></script>
+  <script src="src/event.js"></script>
   <script src="src/infiniteScroll.js"></script>
   <script>focalendar()</script>
 </body>
