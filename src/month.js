@@ -26,7 +26,31 @@
       date.setDate( date.getDate() + 1 );
     }
 
+    addEvents(month, date);
+
     return month;
+  }
+
+
+
+  function addEvents(month, date) {
+    app.store.get(date).then(function(data) {
+      month.find('.day').each(function() {
+        var day = $(this);
+        createDayEvents(day, data);
+      });
+    });
+  }
+
+
+
+  function createDayEvents(day, data) {
+    var dayDate = day.attr('data-date');
+    for (var i = 0; i < data.length; i++) {
+      if (sameDay(dayDate, data[i].date)) {
+        app.day.addEvent(day, data[i]);
+      }
+    };
   }
 
 
@@ -51,6 +75,14 @@
   // example: 'JANURARY' or 'SEPTEMBER'
   function nameOfMonth(date) {
     return monthNames[date.getMonth()];
+  }
+
+
+
+  function sameDay(a, b) {
+    var dateA = new Date(a);
+    var dateB = new Date(b);
+    return dateA.toDateString() === dateB.toDateString();
   }
 
 

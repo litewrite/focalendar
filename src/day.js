@@ -6,7 +6,11 @@
   baseDay.remove();
 
 
+  app.container.on('click', '.day-label', function(e) {
+    e.stopPropagation();
+  });
 
+  // TODO: also listen to touchdown
   app.container.on('click', '.day', function(e) {
     var event = app.event();
 
@@ -33,6 +37,13 @@
     }
 
     return day;
+  };
+
+
+
+  app.day.addEvent = function(day, data) {
+    var event = app.event(data);
+    day.find('.events').append(event);
   };
 
 
