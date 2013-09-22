@@ -1,0 +1,23 @@
+body, html {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.month {
+  clear: both;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.day {
+  float: left;
+  list-style: none;
+  width: 14%;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.day:nth-child(even) {
+  background: grey;
+}
