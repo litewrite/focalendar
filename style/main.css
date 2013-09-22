@@ -10,7 +10,12 @@ body, html {
   margin: 0;
   background: #424242;
   font-weight: 500;
-  /*text-align: center;*/
+  /* TODO: test if this works in any browser */
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
 }
 
 .days {
@@ -28,13 +33,16 @@ body, html {
 }
 
 #today {
-  /*background: #8D8D8D;*/
   border-top: 1px solid #424242;
   border-bottom: 1px solid #424242;
 }
 
 #today .day-label {
   color: #000;
+}
+
+.past {
+  opacity: 0.7;
 }
 
 .day-label {

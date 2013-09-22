@@ -26,11 +26,14 @@
       var day = baseDay.cloneNode(true);
       var label = byClass('day-label', day);
 
-      label.innerText = dayOfWeek(date) + ' ' + date.getDate();
+      label.innerHTML = dayOfWeek(date) + ' ' + date.getDate();
       day.setAttribute('data-date', date.toDateString());
 
-      // mark today
-      if (isToday(date)) day.id = 'today';
+      if (isToday(date)) {
+        day.id = 'today';
+      } else if (isPast(date)) {
+        day.classList.add('past');
+      }
 
       return day;
     };
@@ -54,7 +57,7 @@
       var monthNumber = date.getMonth();
 
       // TODO: year for January is wrong when scrolling down
-      header.innerText = nameOfMonth(date) + ' ' + date.getUTCFullYear();
+      header.innerHTML = nameOfMonth(date) + ' ' + date.getUTCFullYear();
 
       // start at first of month
       date.setDate(1);
@@ -75,6 +78,11 @@
   // returns a boolean
   function isToday(date) {
     return date.toDateString() === new Date().toDateString();
+  }
+
+  // returns a boolean
+  function isPast(date) {
+    return date < new Date();
   }
 
 
@@ -170,11 +178,7 @@
 
   // ROADMAP
   //
-  // highlight today
-  // when you reach top or bottom while scrolling load more days
-  // make month headers sticky to the month they belong to
   // add a notifier pointing in the direction where today is
-  // grey out past days
 
 
 
