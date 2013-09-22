@@ -84,6 +84,11 @@ body, html {
 
 
 .event-content {
+
+}
+
+.event-content.hide {
+  display: none;
 }
 
 .event-edit {

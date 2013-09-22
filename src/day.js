@@ -6,6 +6,20 @@
   baseDay.remove();
 
 
+
+  app.container.on('click', '.day', function(e) {
+    var event = app.event();
+
+    $(e.currentTarget)
+      .find('.events')
+      .append(event);
+
+    event.find('.event-content').addClass('hide');
+
+    event.find('.event-edit').addClass('show').focus();
+  });
+
+
   // returns a day DOM element
   app.day = function(date) {
     var day = baseDay.clone();

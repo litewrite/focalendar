@@ -3,6 +3,12 @@
   var body = $('body');
   var win = $(window);
 
+
+
+  $(window).scroll(app.infiniteScroll);
+
+
+
   app.infiniteScroll = function() {
     var top = body.scrollTop();
     var maxTop = body.height() - win.height();
