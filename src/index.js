@@ -19,17 +19,7 @@
 
 
     var date = new Date();
-    date.setMonth(date.getMonth() - 1);
-    var month = createMonth(baseMonth, baseDay, date);
-    container.appendChild(month);
-
-    var date = new Date();
     month = createMonth(baseMonth, baseDay, date);
-    container.appendChild(month);
-
-    var date = new Date();
-    date.setMonth(date.getMonth() + 1);
-    var month = createMonth(baseMonth, baseDay, date);
     container.appendChild(month);
 
   }
@@ -38,7 +28,7 @@
   function createMonth(baseMonth, baseDay, date) {
 
     var month = baseMonth.cloneNode(true);
-    var header = byClass('header', month);
+    var header = byClass('month-header', month);
     var days = byClass('days', month);
 
     var monthNumber = date.getMonth();
@@ -60,10 +50,16 @@
 
   function createDay(base, date) {
     var day = base.cloneNode(true);
-    var label = byClass('label', day);
+    var label = byClass('day-label', day);
     label.innerText = dayOfWeek(date) + ' ' + date.getDate();
-    day.setAttribute('data-date', date);
+    day.setAttribute('data-date', date.toDateString());
+    if (isToday(date)) day.id = 'today';
     return day;
+  }
+
+
+  function isToday(date) {
+    return date.toDateString() === new Date().toDateString();
   }
 
 
@@ -102,7 +98,7 @@
   // get single element by classname
   // optionally give parent element as second parameter
   function byClass(name, el) {
-    return (el || document)['getElementsByClassName'](name)[0];
+    return (el || document).getElementsByClassName(name)[0];
   }
 
 
@@ -112,9 +108,6 @@
 
   // ROADMAP
   //
-  // each day has a number, a name and a events area
-  // add a month header wherever a month starts
-  // highlight weekends
   // highlight today
   // when you reach top or bottom while scrolling load more days
   // make month headers sticky to the month they belong to

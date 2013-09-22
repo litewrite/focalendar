@@ -4,20 +4,40 @@ body, html {
   margin: 0;
 }
 
-.month {
-  clear: both;
-  width: 100%;
-  padding: 20px 0;
+.month-header {
+  padding: 15px;
+  color: #fff;
+  margin: 0;
+  background: #424242;
+  font-weight: 500;
+  /*text-align: center;*/
+}
+
+.days {
+  padding: 0;
+  margin: 0;
 }
 
 .day {
-  float: left;
   list-style: none;
-  width: 14%;
-  padding: 15px 0;
-  text-align: center;
+  padding: 15px;
 }
 
 .day:nth-child(even) {
-  background: grey;
+  background: #FAFAFA;
+}
+
+#today {
+  /*background: #8D8D8D;*/
+  border-top: 1px solid #424242;
+  border-bottom: 1px solid #424242;
+}
+
+#today .day-label {
+  color: #000;
+}
+
+.day-label {
+  color: #535353;
+  font-weight: 500;
 }
