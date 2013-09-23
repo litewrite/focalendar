@@ -7,11 +7,10 @@
 
 
 
-  app.container.on('click', '.event', app.stopPropagation);
-
-
   app.container.on('blur', '.event-content', manageEvent);
   app.container.on('keyup', '.event-content', createOrUpdate);
+
+  app.container.on('click', '.event', app.stopPropagation);
 
 
 

@@ -1,7 +1,9 @@
 (function(app) {
 
+
   // simple, inefficent localstorage implementation
   // can be replaced with something like remotestorage later on
+
 
 
   var PATH = 'focalendar';
@@ -37,14 +39,14 @@
 
     set: function(id, data) {
       data.id = id;
-      storage[findItem(id)] = data;
+      storage[getIndex(id)] = data;
       saveStorage();
       return $.Deferred().resolve(data);
     },
 
 
     remove: function(id) {
-      storage.splice(findItem(id), 1);
+      storage.splice(getIndex(id), 1);
       saveStorage();
       return $.Deferred().resolve();
     }
@@ -67,7 +69,7 @@
 
 
 
-  function findItem(id) {
+  function getIndex(id) {
     for (var i = 0; i < storage.length; i++) {
       // NOTE: maybe it's save to test both ids with .toString() here
       if (storage[i].id == id) return i;

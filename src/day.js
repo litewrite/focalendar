@@ -10,7 +10,6 @@
   app.container.on('click', '.day', createEvent);
   app.container.on('touchend', '.day', createEvent);
 
-
   app.container.on('click', '.day-label', app.stopPropagation);
 
 
