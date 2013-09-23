@@ -9,6 +9,10 @@
 
 
 
+  loadStorage();
+
+
+
   app.store = {
 
 
@@ -79,10 +83,6 @@
     var month = dateA.getUTCMonth() === dateB.getUTCMonth();
     return year && month;
   }
-
-
-
-  loadStorage();
 
 
 

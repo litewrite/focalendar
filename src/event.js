@@ -7,9 +7,7 @@
 
 
 
-  app.container.on('click', '.event', function(e) {
-    e.stopPropagation();
-  });
+  app.container.on('click', '.event', app.stopPropagation);
 
 
   app.container.on('blur', '.event-content', manageEvent);
