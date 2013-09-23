@@ -44,7 +44,6 @@
 
   function addEvents(month, events) {
     month.find('.day').each(function() {
-      console.log('add');
       var day = $(this);
       createDayEvents(day, events);
     });

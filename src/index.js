@@ -11,6 +11,7 @@
     addCurrentMonth();
 
     $(window).scroll(app.infiniteScroll);
+    $(window).on('touchmove', app.infiniteScroll);
 
   };
 
@@ -31,11 +32,12 @@
 
   // ROADMAP
   //
-  // make events draggable
   // add remotestorage
+  // make events draggable
   // dynamic day size
   // multiple calendars
   // add a notifier pointing in the direction where today is
+  // better handling of event binding. its a mess right now.
 
 
 })();

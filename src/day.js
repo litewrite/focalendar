@@ -38,8 +38,7 @@
 
 
 
-  // TODO: also listen to touchdown
-  app.container.on('click', '.day', function(e) {
+  function createEvent(e) {
     var event = app.event();
 
     $(e.currentTarget)
@@ -47,7 +46,11 @@
       .append(event);
 
     event.find('.event-content').focus();
-  });
+  }
+
+
+  app.container.on('click', '.day', createEvent);
+  app.container.on('touchend', '.day', createEvent);
 
 
 
