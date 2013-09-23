@@ -6,6 +6,7 @@
   baseMonth.remove();
 
 
+
   // returns a month DOM element for the month of the given date
   app.month = function(date) {
 

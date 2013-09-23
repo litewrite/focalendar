@@ -16,6 +16,7 @@
   app.container.on('keyup', '.event-content', createOrUpdate);
 
 
+
   // returns a event DOM element
   app.event = function(data) {
 

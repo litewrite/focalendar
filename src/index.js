@@ -4,6 +4,9 @@
   var app = window.focalendar = {};
 
 
+  app.container = $('#container');
+
+
 
   // main entry point for the application
   app.run = function() {
@@ -14,10 +17,6 @@
     $(window).on('touchmove', app.infiniteScroll);
 
   };
-
-
-
-  app.container = $('#container');
 
 
 
@@ -37,7 +36,6 @@
   // dynamic day size
   // multiple calendars
   // add a notifier pointing in the direction where today is
-  // better handling of event binding. its a mess right now.
 
 
 })();

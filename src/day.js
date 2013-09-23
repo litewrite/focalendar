@@ -6,6 +6,17 @@
   baseDay.remove();
 
 
+
+  app.container.on('click', '.day-label', function(e) {
+    e.stopPropagation();
+  });
+
+
+  app.container.on('click', '.day', createEvent);
+  app.container.on('touchend', '.day', createEvent);
+
+
+
   // returns a day DOM element
   app.day = function(date) {
     var day = baseDay.clone();
@@ -32,12 +43,6 @@
 
 
 
-  app.container.on('click', '.day-label', function(e) {
-    e.stopPropagation();
-  });
-
-
-
   function createEvent(e) {
     var event = app.event();
 
@@ -47,10 +52,6 @@
 
     event.find('.event-content').focus();
   }
-
-
-  app.container.on('click', '.day', createEvent);
-  app.container.on('touchend', '.day', createEvent);
 
 
 

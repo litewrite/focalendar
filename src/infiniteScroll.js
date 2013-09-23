@@ -1,5 +1,6 @@
 (function(app) {
 
+
   var body = $('body');
   var win = $(window);
 
@@ -12,6 +13,7 @@
     if (top <= 0) return fetchEarlierDates();
     if (top >= maxTop) fetchLaterDates();
   };
+
 
 
   function fetchEarlierDates() {
@@ -27,6 +29,7 @@
 
     body.scrollTop(currentMonth.offset().top);
   }
+
 
 
   function fetchLaterDates() {
