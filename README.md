@@ -17,12 +17,8 @@ Future inspiration: [SlideScreen](http://slidescreenhome.com), [Flipboard](http:
 
 ## Technology
 
-* [Bootstrap](http://twitter.github.com/bootstrap)
-* [Backbone.js](http://documentcloud.github.com/backbone/)
+* [jQuery](http://jquery.com/)
 * [remoteStorage.js](http://remotestoragejs.com)
-* [Date.js](http://github.com/eric/Datejs)
-* [Moment.js](http://momentjs.com)
-* [hCalendar](http://microformats.org/wiki/hcalendar)
 
 
 
