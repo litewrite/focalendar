@@ -13,6 +13,7 @@
     var header = month.find('.month-header');
     var days = month.find('.days');
     var monthNumber = date.getMonth();
+    var events = getEvents(date);
 
     // TODO: year for January is wrong when scrolling down
     header.text( nameOfMonth(date) + ' ' + date.getUTCFullYear() );
@@ -26,19 +27,26 @@
       date.setDate( date.getDate() + 1 );
     }
 
-    addEvents(month, date);
+    events.then(function(events) {
+      addEvents(month, events);
+    });
 
     return month;
   };
 
 
 
-  function addEvents(month, date) {
-    app.store.get(date).then(function(data) {
-      month.find('.day').each(function() {
-        var day = $(this);
-        createDayEvents(day, data);
-      });
+  function getEvents(date) {
+    return app.store.get(date);
+  }
+
+
+
+  function addEvents(month, events) {
+    month.find('.day').each(function() {
+      console.log('add');
+      var day = $(this);
+      createDayEvents(day, events);
     });
   }
 
