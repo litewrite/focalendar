@@ -7,7 +7,7 @@
 
 
   app.infiniteScroll = function() {
-    var top = body.scrollTop();
+    var top = win.scrollTop();
     var maxTop = body.height() - win.height();
 
     if (top <= 0) return fetchEarlierDates();
@@ -27,7 +27,7 @@
 
     app.container.prepend(previousMonth);
 
-    body.scrollTop(currentMonth.offset().top);
+    win.scrollTop(currentMonth.offset().top);
   }
 
 
