@@ -16,6 +16,10 @@
     $(window).scroll(app.infiniteScroll);
     $(window).on('touchmove', app.infiniteScroll);
 
+    $(function() {
+      setTimeout(app.goToToday, 100);
+    });
+
   };
 
 

@@ -7,13 +7,14 @@
 
 
 
-  todayLink.on('click', scrollToToday);
+  todayLink.on('click', app.goToToday);
 
 
 
-  function scrollToToday(e) {
+  app.goToToday = function(e) {
 
-    e.preventDefault();
+    console.log('here');
+    if (e) e.preventDefault();
 
 
     var today = $('#today');
