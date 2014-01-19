@@ -2,17 +2,17 @@
 
   // ROADMAP
   //
-  // add remotestorage.
+  // make month header sticky
+  // add a notifier pointing in the direction where today is.
   // make events draggable.
+  // only show first part of event description (title). expand on hover/click.
   // dynamic day size.
+  // on mobile: hide menu when keyboard open
+  // multiple calendars ?
+  // add remotestorage.
   // update calendar at least once a day. select today & adjust sizes of days.
   // compatible with other calendars.
-  // add times to events.
-  // only show first part of event description (title). expand on hover/click.
   // add web notifications.
-  // multiple calendars.
-  // add a notifier pointing in the direction where today is.
-  // make month header sticky
 
 
   var app = window.focalendar = {};

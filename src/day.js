@@ -9,7 +9,6 @@
 
   app.$container
     .on('click', '.day', createEvent)
-    .on('touchend', '.day', createEvent)
     .on('click', '.day-label', app.stopPropagation);
 
 

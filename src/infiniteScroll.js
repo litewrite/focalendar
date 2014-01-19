@@ -1,6 +1,9 @@
 (function(app) {
 
 
+
+  var TOLERANCE = 50;
+
   var $body = $('body');
   var $window = $(window);
 
@@ -9,9 +12,9 @@
   // TODO: eventually debounce this function for performance. maybe only mobile.
   app.infiniteScroll = function() {
     var top = $window.scrollTop();
-    var maxTop = $body.height() - $window.height();
+    var maxTop = $body.height() - $window.height() - TOLERANCE;
 
-    if (top <= 0) return fetchEarlierDates();
+    if (top <= TOLERANCE) return fetchEarlierDates();
     if (top >= maxTop) fetchLaterDates();
   };
 
