@@ -1,14 +1,15 @@
 (function(app) {
 
 
-  var body = $('body');
-  var win = $(window);
+  var $body = $('body');
+  var $window = $(window);
 
 
 
+  // TODO: eventually debounce this function for performance. maybe only mobile.
   app.infiniteScroll = function() {
-    var top = win.scrollTop();
-    var maxTop = body.height() - win.height();
+    var top = $window.scrollTop();
+    var maxTop = $body.height() - $window.height();
 
     if (top <= 0) return fetchEarlierDates();
     if (top >= maxTop) fetchLaterDates();
@@ -17,30 +18,30 @@
 
 
   function fetchEarlierDates() {
-    var firstDay = $('.day').attr('data-date');
-    var previousDay = new Date(firstDay);
+    var $firstDay = $('.day').attr('data-date');
+    var previousDate = new Date($firstDay);
 
-    previousDay.setDate( previousDay.getDate() - 1 );
+    previousDate.setDate( previousDate.getDate() - 1 );
 
-    var previousMonth = app.month(previousDay);
-    var currentMonth = $('.month');
+    var $previousMonth = app.month(previousDate);
+    var $currentMonth = $('.month');
 
-    app.container.prepend(previousMonth);
+    app.$container.prepend($previousMonth);
 
-    win.scrollTop(currentMonth.offset().top);
+    $window.scrollTop($currentMonth.offset().top);
   }
 
 
 
   function fetchLaterDates() {
-    var lastDay = $('.day').last().attr('data-date');
-    var nextDay = new Date(lastDay);
+    var $lastDay = $('.day').last().attr('data-date');
+    var nextDate = new Date($lastDay);
 
-    nextDay.setDate( nextDay.getDate() + 1 );
+    nextDate.setDate( nextDate.getDate() + 1 );
 
-    var nextMonth = app.month(nextDay);
+    var $nextMonth = app.month(nextDate);
 
-    app.container.append(nextMonth);
+    app.$container.append($nextMonth);
   }
 
 

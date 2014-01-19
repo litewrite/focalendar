@@ -2,52 +2,52 @@
 
 
 
-  var baseDay = $('.day');
-  baseDay.remove();
+  var $baseDay = $('.day');
+  $baseDay.remove();
 
 
 
-  app.container.on('click', '.day', createEvent);
-  app.container.on('touchend', '.day', createEvent);
-
-  app.container.on('click', '.day-label', app.stopPropagation);
+  app.$container
+    .on('click', '.day', createEvent)
+    .on('touchend', '.day', createEvent)
+    .on('click', '.day-label', app.stopPropagation);
 
 
 
   // returns a day DOM element
   app.day = function(date) {
-    var day = baseDay.clone();
-    var label = day.find('.day-label');
+    var $day = $baseDay.clone();
+    var $label = $day.find('.day-label');
 
-    label.text(dayOfWeek(date) + ' ' + date.getDate());
-    day.attr('data-date', date.toDateString());
+    $label.text( dayOfWeek(date) + ' ' + date.getDate() );
+    $day.attr('data-date', date.toDateString());
 
     if (isToday(date)) {
-      day.attr('id', 'today');
+      $day.attr('id', 'today');
     } else if (isPast(date)) {
-      day.addClass('past');
+      $day.addClass('past');
     }
 
-    return day;
+    return $day;
   };
 
 
 
-  app.day.addEvent = function(day, data) {
-    var event = app.event(data);
-    day.find('.events').append(event);
+  app.day.addEvent = function($day, data) {
+    var $event = app.event(data);
+    $day.find('.events').append($event);
   };
 
 
 
   function createEvent(e) {
-    var event = app.event();
+    var $event = app.event();
 
     $(e.currentTarget)
       .find('.events')
-      .append(event);
+      .append($event);
 
-    event.find('.event-content').focus();
+    $event.find('.event-content').focus();
   }
 
 
