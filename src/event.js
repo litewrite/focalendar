@@ -53,7 +53,7 @@
     var $edit = $(e.currentTarget);
     var $event = $edit.parent();
     var id = $event.attr('data-id');
-    var content = $edit.val();
+    var content = $edit.val().trim();
 
     if (!content) return;
 

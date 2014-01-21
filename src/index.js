@@ -2,6 +2,7 @@
 
   // ROADMAP
   //
+  // januaray sometimes has the wrong year
   // make month header sticky
   // add a notifier pointing in the direction where today is.
   // make events draggable.

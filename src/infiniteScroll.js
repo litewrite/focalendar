@@ -10,6 +10,7 @@
 
 
   // TODO: eventually debounce this function for performance. maybe only mobile.
+  // TODO: remove some months if list gets to big.
   app.infiniteScroll = function() {
     var top = $window.scrollTop();
     var maxTop = $body.height() - $window.height() - TOLERANCE;
