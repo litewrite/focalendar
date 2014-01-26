@@ -30,7 +30,7 @@
       .on('scroll', app.infiniteScroll)
       .on('touchmove', app.infiniteScroll);
 
-    app.goToToday();
+    setTimeout(app.goToToday, 500);
   };
 
 
