@@ -14,15 +14,24 @@ Future inspiration: [SlideScreen](http://slidescreenhome.com), [Flipboard](http:
 * **everything is an event**, tasks should not be separated from events
 
 
+## Roadmap
 
-## Technology
+* januaray sometimes has the wrong year
+* make month header sticky
+* add a notifier pointing in the direction where today is.
+* make events draggable.
+* only show first part of event description (title). expand on hover/click.
+* dynamic day size.
+* on mobile: hide menu when keyboard open
+* multiple calendars ?
+* add remotestorage.
+* update calendar at least once a day. select today & adjust sizes of days.
+* compatible with other calendars.
+* add web notifications.
+For more check #2.
 
-* [jQuery](http://jquery.com/)
-* [remoteStorage.js](http://remotestoragejs.com)
 
-
-
-## Unhosted
+## Unhosted (planned)
 
 **This app allows you to use your own data storage!** Its code is fully client-side without any server backend you need to trust! Find out more about the [Unhosted movement](http://unhosted.org). localStorage is used as fallback, so you can also use it offline.
 
